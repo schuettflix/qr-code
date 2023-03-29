@@ -15,7 +15,13 @@ final class MatrixFactory implements MatrixFactoryInterface
     public function create(QrCodeInterface $qrCode): MatrixInterface
     {
         $baconErrorCorrectionLevel = ErrorCorrectionLevelConverter::convertToBaconErrorCorrectionLevel($qrCode->getErrorCorrectionLevel());
-        $baconMatrix = Encoder::encode($qrCode->getData(), $baconErrorCorrectionLevel, strval($qrCode->getEncoding()))->getMatrix();
+        $baconMatrix = Encoder::encode(
+            $qrCode->getData(),
+            $baconErrorCorrectionLevel,
+            strval($qrCode->getEncoding()),
+            null,
+            $qrCode->isPrefixEci()
+        )->getMatrix();
 
         $blockValues = [];
         $columnCount = $baconMatrix->getWidth();

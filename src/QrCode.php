@@ -29,7 +29,8 @@ final class QrCode implements QrCodeInterface
         private int $margin = 10,
         RoundBlockSizeModeInterface|null $roundBlockSizeMode = null,
         ColorInterface|null $foregroundColor = null,
-        ColorInterface|null $backgroundColor = null
+        ColorInterface|null $backgroundColor = null,
+        private bool $prefixEci = true,
     ) {
         $this->encoding = $encoding ?? new Encoding('UTF-8');
         $this->errorCorrectionLevel = $errorCorrectionLevel ?? new ErrorCorrectionLevelLow();
@@ -137,5 +138,15 @@ final class QrCode implements QrCodeInterface
         $this->backgroundColor = $backgroundColor;
 
         return $this;
+    }
+
+    public function isPrefixEci(): bool
+    {
+        return $this->prefixEci;
+    }
+
+    public function setPrefixEci(bool $prefixEci): void
+    {
+        $this->prefixEci = $prefixEci;
     }
 }

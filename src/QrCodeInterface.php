@@ -26,4 +26,6 @@ interface QrCodeInterface
     public function getForegroundColor(): ColorInterface;
 
     public function getBackgroundColor(): ColorInterface;
+
+    public function isPrefixEci(): bool;
 }
