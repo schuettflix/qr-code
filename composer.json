@@ -19,7 +19,7 @@
     ],
     "require": {
         "php": "^8.0",
-        "schuettflix/bacon-qr-code": "dev-feat/make-eci-prefix-configurable"
+        "bacon/bacon-qr-code": "dev-feat/make-eci-prefix-configurable@dev"
     },
     "require-dev": {
         "ext-gd": "*",
