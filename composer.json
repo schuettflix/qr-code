@@ -11,9 +11,15 @@
             "email": "info@endroid.nl"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/schuettflix/BaconQrCode.git"
+        }
+    ],
     "require": {
         "php": "^8.0",
-        "bacon/bacon-qr-code": "^2.0.5"
+        "schuettflix/bacon-qr-code": "dev-feat/make-eci-prefix-configurable"
     },
     "require-dev": {
         "ext-gd": "*",
