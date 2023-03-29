@@ -60,4 +60,6 @@ interface BuilderInterface
     public function validateResult(bool $validateResult): BuilderInterface;
 
     public function build(): ResultInterface;
+
+    public function prefixEci(bool $prefixEci): BuilderInterface;
 }

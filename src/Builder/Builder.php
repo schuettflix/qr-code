@@ -48,7 +48,8 @@ class Builder implements BuilderInterface
      *     logoPath?: string,
      *     logoResizeToWidth?: int,
      *     logoResizeToHeight?: int,
-     *     logoPunchoutBackground?: bool
+     *     logoPunchoutBackground?: bool,
+     *     prefixEci: bool,
      * }
      */
     private array $options;
@@ -63,6 +64,7 @@ class Builder implements BuilderInterface
             'logoClass' => Logo::class,
             'labelClass' => Label::class,
             'validateResult' => false,
+            'prefixEci' => true,
         ];
     }
 
@@ -236,6 +238,13 @@ class Builder implements BuilderInterface
         }
 
         return $result;
+    }
+
+    public function prefixEci(bool $prefixEci): BuilderInterface
+    {
+        $this->options['prefixEci'] = $prefixEci;
+
+        return $this;
     }
 
     /**
